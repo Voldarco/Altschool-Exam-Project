@@ -18,7 +18,7 @@ provider "aws" {
 data "aws_availability_zones" "available" {}
 
 locals {
-  cluster_name = "aws-cluster"
+  cluster_name = "circleci"
 }
 
 resource "random_string" "suffix" {
@@ -30,7 +30,7 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.19.0"
 
-  name = "auction-vpc"
+  name = "circleci-vpc"
 
   cidr = "10.0.0.0/16"
   azs  = slice(data.aws_availability_zones.available.names, 0, 3)
