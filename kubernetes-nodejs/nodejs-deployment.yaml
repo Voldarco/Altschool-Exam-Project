@@ -50,7 +50,7 @@ spec:
                 configMapKeyRef:
                   key: MONGO_USERNAME
                   name: env
-          image: volderx/nodejs
+          image: bennieo/nodejs
           name: nodejs
           ports:
             - containerPort: 8080
